@@ -85,6 +85,8 @@ pb.pot.Pot.prototype.updateUi = function() {
         var newStyle = 'rotateZ(' + (this.model.getNormalizedValue() * this.angle) + 'deg)';
         this.$(this.mappings.KNOB)[0].style['-webkit-transform'] = newStyle;
         this.$(this.mappings.KNOB)[0].style['transform'] = newStyle;
+
+        $(this.getElement()).find('.slider').slider("value", this.model.getNormalizedValue());
     }
 };
 
@@ -94,6 +96,7 @@ pb.pot.Pot.prototype.updateUi = function() {
  */
 pb.pot.Pot.prototype.templates_base = function() {
     return '<div class="pot ' + this.size + '" id="' + this.getId() + '">' +
+               '<div class="slider"></div>' +
                '<div class="knobHolder">' +
                    '<div class="knob"></div>' +
                '</div>' +
@@ -108,9 +111,24 @@ pb.pot.Pot.prototype.templates_base = function() {
  * Render method updates its knob.
  */
 pb.pot.Pot.prototype.enterDocument = function() {
-    goog.base(this, 'enterDocument');
+  goog.base(this, 'enterDocument');
 
-    this.updateUi();
+  var self = this;
+  $(this.getElement()).find(".slider").slider({
+    min: 0,
+    max: 1,
+    step: 0.05,
+    value: 0.6,
+    orientation: "vertical",
+    range: "min",
+    animate: true,
+    slide: function( event, ui ) {
+      self.setValue(ui.value);
+    }
+  });
+
+  this.updateUi();
+
 };
 
 
@@ -139,25 +157,3 @@ pb.pot.Pot.prototype.bindModelEvents = function() {
     goog.events.listen(this.model, pb.pot.PotModel.EventType.VALUE_CHANGED, this.updateUi, false, this);
 };
 
-(function(proto) {
-    proto.events = {};
-    var mousedown = proto.events[goog.events.EventType.MOUSEDOWN] = {};
-
-    mousedown[proto.mappings.KNOB] = function(e) {
-        this.flag = true;
-        this.oldY = e.clientY;
-
-        var mouseup = goog.events.listen(document.body, 'mouseup', function(e) {
-            this.flag = false;
-            goog.events.unlistenByKey(mousemove);
-            goog.events.unlistenByKey(mouseup);
-        }, false, this);
-
-        var mousemove = goog.events.listen(document.body, 'mousemove', function(e) {
-            if (this.flag) {
-                this.setValue(this.model.getNormalizedValue() - (e.clientY - this.oldY) / 100);
-                this.oldY = e.clientY;
-            }
-        }, false, this);
-    };
-})(pb.pot.Pot.prototype);
