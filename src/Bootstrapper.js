@@ -21,6 +21,7 @@
 
 goog.provide('pb.Bootstrapper');
 goog.require('pb.Stage');
+goog.require('pb.QueryString');
 
 
 

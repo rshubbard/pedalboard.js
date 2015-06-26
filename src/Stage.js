@@ -156,16 +156,21 @@ pb.Stage.prototype.templates_base = function() {
 
 pb.Stage.prototype.get_song_data = function(song_id) {
     var self = this;
-    dataUrl = "http://api.reverbnation.com/song/" + song_id;
+    var dataUrl = "http://api.reverbnation.com/song/" + song_id;
     goog.net.XhrIo.send(dataUrl, function(e) {
         var xhr = e.target;
         var obj = xhr.getResponseJson();
         self.current_song = obj;
+        self.song_loaded = true;
     });
 }
 
 pb.Stage.prototype.current_song = function() {
     return this.current_song;
+}
+
+pb.Stage.prototype.song_loaded = function() {
+    return this.song_loaded;
 }
 
 

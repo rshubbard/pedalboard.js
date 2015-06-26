@@ -67,6 +67,9 @@
     stage.render(document.getElementById('floor'));
 
 
+    var query_string = new pb.QueryString();
+    var params = query_string.params(window.location);
+
     /*
 
      Sample controls
@@ -85,7 +88,7 @@
         $(audio).toggle();
     };
 
-    stage.get_song_data(23719455);
+    stage.get_song_data(params.get('song'));
 
 
     var play = function () {
