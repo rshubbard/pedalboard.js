@@ -13,11 +13,11 @@ pb.io.ElementInput = function(context, url) {
   goog.base(this, context);
 
   var that = this;
-  var element = goog.dom.createDom("audio", {
+  var element = /** @type {HTMLMediaElement} */(goog.dom.createDom("audio", {
     "crossOrigin": "anonymous",
     "src": url,
     "loop": true
-  });
+  }));
   goog.dom.appendChild(goog.dom.getDocument().body, element);
   // var element = new Audio();
   // element.crossOrigin = "anonymous";
