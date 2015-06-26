@@ -65,13 +65,9 @@ pb.io.Input.State = {
  */
 pb.io.Input.prototype.play = function(opt_time) {
   if (this.state == pb.io.Input.State.NOT_STARTED) {
-    if (this.source.start) {
-      this.source.start(opt_time || 0);
-    } else if (this.element) {
-      this.element.play();
-    }
+    this.source.start(opt_time || 0);
     this.state = pb.io.Input.State.PLAYING;
-    }
+  }
 };
 
 
@@ -82,11 +78,7 @@ pb.io.Input.prototype.play = function(opt_time) {
  */
 pb.io.Input.prototype.stop = function(opt_time) {
   if (this.state == pb.io.Input.State.PLAYING) {
-    if (this.source.start) {
-      this.source.stop(opt_time || 0);
-    } else if (this.element) {
-      this.element.pause();
-    }
+    this.source.stop(opt_time || 0);
     this.state = pb.io.Input.State.FINISHED;
   }
 };
