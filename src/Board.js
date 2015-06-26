@@ -71,9 +71,6 @@ pb.Board.prototype.addPedals = function(pedals) {
 pb.Board.prototype.doShadows = function() {
     this.getPedals().forEach(function(pedal) {
         pb.shadowMaker(pedal.getElement(), 40, 0.5, 0.7);
-        pedal.pots.forEach(function(pot) {
-            pb.shadowMaker(pot.$(pot.mappings.KNOB_HOLDER)[0], 10, 0.5, 4);
-        });
     });
 };
 

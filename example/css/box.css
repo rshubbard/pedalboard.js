@@ -19,7 +19,7 @@
     clear: both;
     text-align: center;
     font-size: 5vh;
-    top: 20vh;
+    bottom: 25vh;
     left: 0;
     width: 100%;
     position: absolute;
@@ -70,16 +70,6 @@
     background-color: hsl(90, 67%, 40%);
 }
 
-.overdrive .pot.small {
-    top: -5vh;
-}
-
-.overdrive .pot:nth-child(1) .name {
-    left: -2.5vh;
-}
-.overdrive .pot:nth-child(2) .name {
-    left: 2vh;
-}
 
 .volume {
     background-color: hsl(50, 60%, 47%);

@@ -82,10 +82,6 @@ pb.pot.Pot.prototype.setValue = function(newValue) {
  */
 pb.pot.Pot.prototype.updateUi = function() {
     if (this.isInDocument()) {
-        var newStyle = 'rotateZ(' + (this.model.getNormalizedValue() * this.angle) + 'deg)';
-        this.$(this.mappings.KNOB)[0].style['-webkit-transform'] = newStyle;
-        this.$(this.mappings.KNOB)[0].style['transform'] = newStyle;
-
         $(this.getElement()).find('.slider').slider("value", this.model.getNormalizedValue());
     }
 };
@@ -97,9 +93,6 @@ pb.pot.Pot.prototype.updateUi = function() {
 pb.pot.Pot.prototype.templates_base = function() {
     return '<div class="pot ' + this.size + '" id="' + this.getId() + '">' +
                '<div class="slider"></div>' +
-               '<div class="knobHolder">' +
-                   '<div class="knob"></div>' +
-               '</div>' +
                '<div class="nameHolder">' +
                    '<div class="name">' + this.model.name + '</div>' +
                '</div>' +
@@ -136,8 +129,6 @@ pb.pot.Pot.prototype.enterDocument = function() {
  * @enum {string} DOM mappings.
  */
 pb.pot.Pot.prototype.mappings = {
-    KNOB: '.knob',
-    KNOB_HOLDER: '.knobHolder'
 };
 
 

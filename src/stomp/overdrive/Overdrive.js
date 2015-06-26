@@ -54,7 +54,7 @@ pb.stomp.Overdrive.prototype.createPots = function() {
     var toneHandler = goog.bind(this.model.setTone, this.model);
 
     this.drivePot = new pb.pot.Log(driveHandler, 'drive', 2000);
-    this.tonePot = new pb.pot.Log(toneHandler, 'tone', 3000, pb.pot.Pot.Size.SMALL);
+    this.tonePot = new pb.pot.Log(toneHandler, 'tone', 3000);
     this.pots.push(this.drivePot, this.tonePot);
 };
 
