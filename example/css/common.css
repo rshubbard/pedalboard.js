@@ -37,6 +37,16 @@ footer {
     -moz-transform-style: preserve-3d;
 }
 
+#artist {
+    font-family: 'Yellowtail', 'Damion', cursive;
+    font-size: 5vh;
+}
+
+#title {
+    font-family: 'Yellowtail', 'Damion', cursive;
+    font-size: 5vh;
+}
+
 .stage {
     bottom: 90px; width: 100%; position: absolute;
 
