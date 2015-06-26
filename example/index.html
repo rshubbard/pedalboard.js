@@ -87,11 +87,11 @@
 
     stage.get_song_data(23719455);
 
-    document.getElementById('artist').innerHTML = stage.current_song.name;
-    document.getElementById('title').innerHTML = stage.current_song.name;
 
     var play = function () {
         stage.play(stage.current_song.url);
+        document.getElementById('artist').innerHTML = stage.current_song.artist['name'];
+        document.getElementById('title').innerHTML = stage.current_song.name;
     };
 
     var cBHandler = function () {
