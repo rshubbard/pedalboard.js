@@ -23,6 +23,7 @@
 goog.provide('pb.Stage');
 goog.require('pb.Board');
 goog.require('pb.io.FileInput');
+goog.require('pb.io.ElementInput');
 goog.require('pb.io.Output');
 goog.require('pb.io.StreamInput');
 goog.require('pb.ui.Component');
@@ -125,7 +126,8 @@ pb.Stage.prototype.setMediaStreamDestination = function(destination) {
  */
 pb.Stage.prototype.play = function(url) {
     this.input.disconnect();
-    this.input = new pb.io.FileInput(this.context, url);
+  // this.input = new pb.io.FileInput(this.context, url);
+  this.input = new pb.io.ElementInput(this.context, url);
     this.route();
     this.input.addEventListener('loaded', this.input.play.bind(this.input, 0), false);
 };

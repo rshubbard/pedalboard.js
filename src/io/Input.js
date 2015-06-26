@@ -64,9 +64,13 @@ pb.io.Input.State = {
  * @param {number=} opt_time Milliseconds after whom this input will start playing.
  */
 pb.io.Input.prototype.play = function(opt_time) {
-    if (this.state == pb.io.Input.State.NOT_STARTED) {
-        this.source.start(opt_time || 0);
-        this.state = pb.io.Input.State.PLAYING;
+  if (this.state == pb.io.Input.State.NOT_STARTED) {
+    if (this.source.start) {
+      this.source.start(opt_time || 0);
+    } else if (this.element) {
+      this.element.play();
+    }
+    this.state = pb.io.Input.State.PLAYING;
     }
 };
 
@@ -77,10 +81,14 @@ pb.io.Input.prototype.play = function(opt_time) {
  * @param {number=} opt_time Milliseconds after whom this input will stop playing.
  */
 pb.io.Input.prototype.stop = function(opt_time) {
-    if (this.state == pb.io.Input.State.PLAYING) {
-        this.source.stop(opt_time || 0);
-        this.state = pb.io.Input.State.FINISHED;
+  if (this.state == pb.io.Input.State.PLAYING) {
+    if (this.source.start) {
+      this.source.stop(opt_time || 0);
+    } else if (this.element) {
+      this.element.pause();
     }
+    this.state = pb.io.Input.State.FINISHED;
+  }
 };
 
 
