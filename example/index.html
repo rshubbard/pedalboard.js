@@ -26,19 +26,10 @@
 <div id="world">
     <div id="box">
         <div id="floor">
-            <footer>&nbsp;PEDALBOARD.JS&nbsp;</footer>
         </div>
         <div id="wall">
             <div id="controlPanel">
                 <div id="controlButton">&#9654;</div>
-                <div class="linein">Line-in (careful, it's too hot!)</div>
-                <div id="samples">
-                    <div class="sample">Sample 1</div>
-                    <div class="sample">Sample 2</div>
-                    <div class="sample">Sample 3</div>
-                    <div class="sample">Sample 4</div>
-                    <div class="sample">Sample 5</div>
-                </div>
             </div>
         </div>
     </div>
@@ -79,45 +70,15 @@
     var state = false;
 
     var cb = document.getElementById('controlButton');
-    var samples = document.getElementsByClassName('sample');
-    var sampleNo = 1;
-    samples = Array.prototype.slice.call(samples);
-    var lb = document.getElementsByClassName('linein')[0];
 
-    var playLineIn = function() {
-        stage.stop();
-        stage.input = new pb.io.StreamInput(stage.getContext());
-        stage.input.addEventListener('loaded', function() {
-            stage.route();
-        });
-    }
-
-    lb.addEventListener('click', function() {
-        state = true;
-        sampleNo = 6;
-        cBDraw();
-        settings[sampleNo - 1]();
-        playLineIn();
-    }, false);
     var settings = [];
 
     var cBDraw = function() {
         cb.innerHTML = state ? '&#9724;' : '&#9654;';
-        samples.forEach(function(sample) {
-            sample.className = 'sample';
-        });
-        samples[sampleNo - 1] && (samples[sampleNo - 1].className = 'sample on');
-
-        sampleNo == 6 ? lb.className = 'linein on' : lb.className = 'linein';
     };
 
     var play = function() {
-        if (sampleNo == 6) {
-            playLineIn();
-            return;
-        }
-        settings[sampleNo - 1] && settings[sampleNo - 1]();
-        stage.play('audio/samples/sample' + sampleNo + '.mp3');
+        stage.play('audio/samples/sample1.mp3');
     }
 
     var cBHandler = function() {
@@ -128,15 +89,6 @@
     };
 
     cb.addEventListener('click', cBHandler, false);
-
-    samples.forEach(function(sample) {
-        sample.addEventListener('click', function() {
-            sampleNo = Array.prototype.slice.call(sample.parentNode.children).indexOf(sample) + 1;
-            state = true;
-            cBDraw();
-            play();
-        });
-    });
 
     settings.push(function() {
         !overdrive.bypassSwitch.getState() && overdrive.bypassSwitch.toggle();
