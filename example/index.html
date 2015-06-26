@@ -77,8 +77,10 @@
         cb.innerHTML = state ? '&#9724;' : '&#9654;';
     };
 
+    stage.get_song_data(23719455);
+
     var play = function() {
-        stage.play('audio/samples/sample1.mp3');
+        stage.play(stage.current_song.url);
     }
 
     var cBHandler = function() {
