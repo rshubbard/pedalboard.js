@@ -9,27 +9,38 @@ goog.require('pb.io.Input');
  * @param {AudioContext} context Context for this input.
  * @param {string} url URL for the input file.
  */
-pb.io.ElementInput = function(context, url) {
+pb.io.ElementInput = function(context, element) {
   goog.base(this, context);
-
   var that = this;
-  var element = /** @type {HTMLMediaElement} */(goog.dom.createDom("audio", {
-    "crossOrigin": "anonymous",
-    "loop": true
-  }));
-  goog.dom.appendChild(goog.dom.getDocument().body, element);
+  this.element = element;
+  this.source = context.createMediaElementSource(element);
 
   element.oncanplay = function() {
     that.dispatchEvent("loaded");
   };
 
-  this.element = element;
-  this.source = context.createMediaElementSource(element);
-  this.source.addEventListener('ended', this.onEnded.bind(this));
+  // var that = this;
+  // var element = /** @type {HTMLMediaElement} */(goog.dom.createDom("audio", {
+  //   "crossOrigin": "anonymous",
+  //   "loop": true
+  // }));
+  // goog.dom.appendChild(goog.dom.getDocument().body, element);
 
-  this.element.src = url;
+  // element.oncanplay = function() {
+  //   that.dispatchEvent("loaded");
+  // };
+
+  // this.element = element;
+  // this.source = context.createMediaElementSource(element);
+  // this.source.addEventListener('ended', this.onEnded.bind(this));
+
+  // this.element.src = url;
 };
 goog.inherits(pb.io.ElementInput, pb.io.Input);
+
+pb.io.ElementInput.prototype.setUrl = function(url) {
+  this.element.src = url;
+};
 
 pb.io.ElementInput.prototype.play = function(opt_time) {
   if (this.state == pb.io.Input.State.NOT_STARTED) {

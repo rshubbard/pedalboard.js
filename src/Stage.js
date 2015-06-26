@@ -76,8 +76,12 @@ pb.Stage.prototype.initIO = function() {
            }, false, this);
      */
 
-    this.input = new pb.io.Input(this.context);
-    this.output = new pb.io.Output(this.context);
+  // this.input = new pb.io.Input(this.context);
+  var element = goog.dom.getElement("player");
+  this.input = new pb.io.ElementInput(this.context, element);
+  this.output = new pb.io.Output(this.context);
+
+  this.input.addEventListener('loaded', this.input.play.bind(this.input, 0), false);
 };
 
 
@@ -126,19 +130,20 @@ pb.Stage.prototype.setMediaStreamDestination = function(destination) {
  * reside at the domain where the application runs.
  */
 pb.Stage.prototype.play = function(url) {
-    this.input.disconnect();
-  // this.input = new pb.io.FileInput(this.context, url);
-  this.input = new pb.io.ElementInput(this.context, url);
-    this.route();
-    this.input.addEventListener('loaded', this.input.play.bind(this.input, 0), false);
+  this.input.setUrl(url);
+  this.route();
 };
+
+/* pb.Stage.prototype.pause = function() {
+  this.input.element.pause();
+}; */
 
 
 /**
  * Stops the input.
  */
 pb.Stage.prototype.stop = function() {
-    this.input.stop();
+  // this.input.element.stop();
 };
 
 

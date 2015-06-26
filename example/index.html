@@ -17,7 +17,7 @@
     <!-- <script type="text/javascript" src="../dist/compiled.js"></script> -->
 
     <!-- For development comment out the line above and uncomment the lines below. -->
-  <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
     <script type="text/javascript" src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
     <script type="text/javascript" src="../lib/tartJS/third_party/goog/goog/base.js"></script>
     <script type="text/javascript" src="deps.js"></script>
@@ -35,6 +35,7 @@
                     <div id="title">Title</div>
                 </div>
                 <div id="controlButton">&#9654;</div>
+                <audio id="player" crossOrigin="anonymous" style="display:none;" controls="true"></audio>
             </div>
         </div>
     </div>
@@ -74,11 +75,14 @@
     var state = false;
 
     var cb = document.getElementById('controlButton');
+    var audio = $("audio#player");
 
     var settings = [];
 
     var cBDraw = function () {
         cb.innerHTML = state ? '&#9724;' : '&#9654;';
+        $(cb).toggle();
+        $(audio).toggle();
     };
 
     stage.get_song_data(23719455);
