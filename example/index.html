@@ -53,6 +53,7 @@
         <div id="wall">
             <div id="controlPanel">
                 <div id="billboard">
+                    <div id="photo"></div>
                     <div id="artist">Artist</div>
                     <div id="title">Title</div>
                 </div>
@@ -117,6 +118,7 @@
         stage.play(stage.current_song.url);
         document.getElementById('artist').innerHTML = stage.current_song.artist['name'];
         document.getElementById('title').innerHTML = stage.current_song.name;
+        document.getElementById('photo').setAttribute('style','background-image: url(' + stage.current_song.image + ');');
     };
 
     var cBHandler = function () {
