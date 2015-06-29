@@ -2,7 +2,7 @@
     position: absolute;
     width: 100%;
     left: 0;
-    -webkit-transform: translateZ(1px)
+    -webkit-transform: translateZ(1px);
     -moz-transform: translateZ(1px)
 }
 
