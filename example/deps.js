@@ -938,7 +938,7 @@ goog.addDependency('../../../../../lib/tartJS/third_party/goog/third_party/closu
 goog.addDependency('../../../../../lib/tartJS/third_party/goog/third_party/closure/goog/silverlight/clipboardbutton.js', ['goog.silverlight.ClipboardButton', 'goog.silverlight.ClipboardButtonType', 'goog.silverlight.ClipboardEvent', 'goog.silverlight.CopyButton', 'goog.silverlight.PasteButton', 'goog.silverlight.PasteButtonEvent'], ['goog.asserts', 'goog.events.Event', 'goog.math.Size', 'goog.silverlight', 'goog.ui.Component']);
 goog.addDependency('../../../../../lib/tartJS/third_party/goog/third_party/closure/goog/silverlight/silverlight.js', ['goog.silverlight'], []);
 goog.addDependency('../../../../../lib/tartJS/third_party/goog/third_party/closure/goog/silverlight/supporteduseragent.js', ['goog.silverlight.supportedUserAgent'], []);
-goog.addDependency('../../../../../src/Board.js', ['pb.Board'], ['goog.debug.ErrorHandler', 'goog.events.EventHandler', 'goog.events.EventTarget', 'pb.stomp.Cabinet', 'pb.stomp.Delay', 'pb.stomp.Overdrive', 'pb.stomp.Reverb', 'pb.stomp.Volume', 'tart.ui.DlgComponent']);
+goog.addDependency('../../../../../src/Board.js', ['pb.Board'], ['goog.debug.ErrorHandler', 'goog.events.EventHandler', 'goog.events.EventTarget', 'pb.stomp.Cabinet', 'pb.stomp.Delay', 'pb.stomp.Master', 'pb.stomp.Overdrive', 'pb.stomp.Reverb', 'pb.stomp.Volume', 'tart.ui.DlgComponent']);
 goog.addDependency('../../../../../src/Bootstrapper.js', ['pb.Bootstrapper'], ['pb.QueryString', 'pb.Stage']);
 goog.addDependency('../../../../../src/ComponentManager.js', ['pb.ui.ComponentManager'], ['tart.ui.ComponentManager']);
 goog.addDependency('../../../../../src/Connectable/Connectable.js', ['pb.Connectable'], ['pb.ConnectableModel', 'pb.IConnectable', 'pb.ui.Component']);

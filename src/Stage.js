@@ -161,7 +161,7 @@ pb.Stage.prototype.get_song_data = function(song_id) {
         var xhr = e.target;
         var obj = xhr.getResponseJson();
         self.current_song = obj;
-        self.song_loaded = true;
+        pb.Stage.song_loaded = true;
     });
 }
 

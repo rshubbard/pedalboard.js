@@ -82,7 +82,7 @@ pb.pot.Pot.prototype.setValue = function(newValue) {
  */
 pb.pot.Pot.prototype.updateUi = function() {
     if (this.isInDocument()) {
-        $(this.getElement()).find('.slider').slider("value", this.model.getNormalizedValue());
+        $(this.getElement()).find('.slider')['slider']("value", this.model.getNormalizedValue());
     }
 };
 
@@ -107,7 +107,7 @@ pb.pot.Pot.prototype.enterDocument = function() {
   goog.base(this, 'enterDocument');
 
   var self = this;
-  $(this.getElement()).find(".slider").slider({
+  $(this.getElement()).find(".slider")['slider']({
     min: 0,
     max: 1,
     step: 0.05,
@@ -118,7 +118,7 @@ pb.pot.Pot.prototype.enterDocument = function() {
     slide: function( event, ui ) {
       self.setValue(ui.value);
     }
-  }).slider("pips", {
+  })['slider']("pips", {
     first: "pip",
     last: "pip"
   });

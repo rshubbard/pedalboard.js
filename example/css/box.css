@@ -30,25 +30,30 @@
 
 .reverb {
     border: 2px solid hsl(194, 61%, 54%);
+    background-color: hsla(194, 61%, 54%, 0.75);
 }
 
 
 .overdrive {
     border: 2px solid hsl(90, 67%, 40%);
+    background-color: hsla(90, 67%, 40%, 0.75);
 }
 
 
 .volume {
     border: 2px solid hsl(50, 60%, 47%);
+    background-color: hsla(50, 60%, 47%, 0.75);
 }
 
 
 .cabinet {
     border: 2px solid hsl(326, 64%, 37%);
+    background-color: hsla(326, 64%, 37%, 0.75);
 }
 
 .delay {
     border: 2px solid hsl(28, 64%, 37%);
+    background-color: hsla(28, 64%, 37%, 0.75);
 }
 
 .master {
