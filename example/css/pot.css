@@ -10,33 +10,14 @@
     display: inline-block;
     font-size: 2vh;
     text-align: center;
-    margin: 1vh;
-    width: 6vh;
-}
-
-.pot.small {
-    height: 5vh;
-    width: 5vh
-}
-
-.pot.small .knobHolder {
-    height: 5vh;
-    width: 5vh;
-}
-
-.pot.small .knob {
-    height: 5vh;
-    width: 5vh;
-    background-size: 5vh 5vh;
-}
-
-.pot.small .nameHolder {
-    top: 1.5vh;
+    margin: 3vh;
+    width: 0.8vh;
 }
 
 .nameHolder {
-    right: 50%;
-    top: 3vh;
+    transform: translateX(-50%);
+    bottom: -4vh;
+    position: absolute;
 }
 
 .knob {
@@ -49,7 +30,7 @@
 
 .pot .name {
     font-size: 3vh;
-    margin-right: -50%;
+
 }
 
 .knobHolder {

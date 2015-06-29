@@ -1,6 +1,6 @@
 .box {
-    height: 60vh;
-    width: 30vh;
+    height: 45vh;
+    width: 25vh;
     border-radius: 10px;
     margin: 2vh;
     padding: 2vh;
@@ -19,7 +19,7 @@
     clear: both;
     text-align: center;
     font-size: 5vh;
-    bottom: 25vh;
+    bottom: 12vh;
     left: 0;
     width: 100%;
     position: absolute;
@@ -27,43 +27,28 @@
     -moz-transform: translateZ(1px);
 }
 
-.delay {
-    background-color: hsl(34, 21%, 14%);
-    width: 25vh;
-}
-
-
-.delay .pot:nth-child(1) {
-    top: 0vh;
-    left: -0.5vh;
-}
-.delay .pot:nth-child(2) {
-    top: -4vh;
-    left: 0vh;
-}
-.delay .pot:nth-child(3) {
-    top: 3vh;
-    left: 1vh;
-}
 
 .reverb {
-    background-color: hsl(194, 61%, 54%);
-    width: 25vh;
+    border: 2px solid hsl(194, 61%, 54%);
 }
 
 
 .overdrive {
-    background-color: hsl(90, 67%, 40%);
+    border: 2px solid hsl(90, 67%, 40%);
 }
 
 
 .volume {
-    background-color: hsl(50, 60%, 47%);
+    border: 2px solid hsl(50, 60%, 47%);
 }
 
 
 .cabinet {
-    background-color: hsl(326, 64%, 37%);
+    border: 2px solid hsl(326, 64%, 37%);
+}
+
+.delay {
+    border: 2px solid hsl(28, 64%, 37%);
 }
 
 

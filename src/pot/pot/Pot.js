@@ -118,6 +118,9 @@ pb.pot.Pot.prototype.enterDocument = function() {
     slide: function( event, ui ) {
       self.setValue(ui.value);
     }
+  }).slider("pips", {
+    first: "pip",
+    last: "pip"
   });
 
   this.updateUi();

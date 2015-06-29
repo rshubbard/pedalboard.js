@@ -15,8 +15,11 @@ footer {
 }
 
 #controlPanel {
-    z-index: 1; position: absolute; width: 100%; text-align: center; bottom: 30vh;
-
+    z-index: 1;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    bottom: 10vh;
     -webkit-transform: translateZ(10px);
     -moz-transform: translateZ(10px);
 }
@@ -40,30 +43,29 @@ footer {
 #artist {
     font-family: 'Yellowtail', 'Damion', cursive;
     font-size: 4vh;
+    text-shadow: 1px 1px #000;
 }
 
 #title {
     font-family: 'Yellowtail', 'Damion', cursive;
     font-size: 5vh;
+    text-shadow: 1px 1px #000;
 }
 
 #photo {
-  height: 500px;
-  width: 50%;
-  position: absolute;
-  margin: 0 auto;
-  top: 0;
-  left: 0;
-  transform: translateX(50%) translateY(-15%);
+    height: 350px;
+    width: 50%;
+    position: absolute;
+    margin: 0 auto;
+    top: 0;
+    left: 0;
+    transform: translateX(50%) translateY(-50%);
 }
 
 .stage {
-    bottom: 90px; width: 100%; position: absolute;
+    position: absolute;
+    right: 0;
 
-    -webkit-transform: rotateX(130deg) translateY(-60%) translateZ(80px) scale(0.6);
-    -moz-transform: rotateX(130deg) translateY(-60%) translateZ(80px) scale(0.6);
-    -webkit-transform-style: preserve-3d;
-    -moz-transform-style: preserve-3d;
     -webkit-transform-origin: 50% 0%;
     -moz-transform-origin: 50% 0%;
 }
@@ -81,56 +83,31 @@ footer {
 #floor {
     z-index: 1; background-size: 100%, 50%; background-position: center bottom;
 
-    background-image:
-        -webkit-radial-gradient(50% 50%, ellipse farthest-corner,
-            rgba(0, 0, 0, 0) 30%,
-            rgba(0, 0, 0, 0.9) 65%,
-            rgba(0, 0, 0, 1) 80%),
-            url('../img/floor.6.jpg');
+    top: 90%
 
-    background-image:
-        -moz-radial-gradient(50% 50%, ellipse farthest-corner,
-            rgba(0, 0, 0, 0) 30%,
-            rgba(0, 0, 0, 0.9) 65%,
-            rgba(0, 0, 0, 1) 80%),
-            url('../img/floor.6.jpg');
-
-    -webkit-transform-style: preserve-3d;
-    -moz-transform-style: preserve-3d;
-    -webkit-transform: rotateX(-110deg);
-    -moz-transform: rotateX(-110deg);
-    -webkit-transform-origin: 0 100%;
-    -moz-transform-origin: 0 100%;
 }
 
 #wall {
-    background-color: #000000; background-position: center, center, bottom; background-size: 100%, 100%, 50%;
+    background-color: #000000; background-position: center, center, bottom; background-size: 100%, 100%, 40%;
 
     background-image:
-        -webkit-radial-gradient(50% 75%, circle closest-corner,
+        -webkit-radial-gradient(50% 65%, circle closest-corner,
             transparent 60%,
             rgba(0, 0, 0, 0.8) 80%),
             -webkit-linear-gradient(rgba(0,0,0,0.5) 40%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,1) 100%),
-        url('../img/floor.6.jpg');
+        url('../img/irongrip.png');
 
     background-image:
-        -moz-radial-gradient(50% 75%, circle closest-corner,
+        -moz-radial-gradient(50% 65%, circle closest-corner,
             transparent 60%,
             rgba(0, 0, 0, 0.8) 80%),
             -moz-linear-gradient(rgba(0,0,0,0.5) 40%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,1) 100%),
-        url('../img/floor.6.jpg');
+        url('../img/irongrip.png');
 }
 
 #controlButton { cursor: pointer; font-size: 6vh; color: rgba(255,255,255,0.6); }
 #controlButton:hover { color: rgba(255,255,255,0.8); }
 
-.sample, .linein { display: inline-block; font-family: Radley; font-size: 30px; margin: 0 1vh; cursor: pointer; color: rgba(255,255,255,0.6); }
-.sample:hover { color: rgba(255,255,255,0.8); }
-.sample.on { color: rgba(255,255,255,0.9); }
-
-.linein { color: rgba(236,64,64,0.6); }
-.linein:hover { color: rgba(236,64,64,0.8); }
-.linein.on { color: rgba(236,64,64,0.9); }
 
 .social {
     z-index: 12; position: absolute; left: 20px; height: 100px; width: 200px; text-align: left; top: 130px;
