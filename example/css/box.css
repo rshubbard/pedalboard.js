@@ -55,6 +55,14 @@
     border: 2px solid #ffffff;
 }
 
+.master .pot{
+   display: none;
+}
+
+.master .name, .master .leds, .master .switches {
+    width: 100%;
+}
+
 
 .box {
     -webkit-transform-style: preserve-3d;

@@ -208,6 +208,30 @@
         overdrive.setTone(.3);
         reverb.setLevel(.7);
     });
+
+    var masterSwitchStates = [];
+
+    $('.master .switch').on('click.switch', function(e) {
+        var masterState = master.bypassSwitch.getState();
+        var switches = [overdrive, reverb, cabinet, delay, volume]
+        if (masterState === true) {
+            switches.forEach(function(switchType) {
+                if (switchType.bypassSwitch.getState() === true) {
+                    switchType.bypassSwitch.toggle();
+                    masterSwitchStates[switchType.name] = true;
+                } else {
+                   masterSwitchStates[switchType.name] = false;
+                }
+            });
+        } else {
+            switches.forEach(function(switchType) {
+                if (switchType.bypassSwitch.getState() === false && masterSwitchStates[switchType.name] === true) {
+                    switchType.bypassSwitch.toggle();
+                }
+            });
+        }
+        
+    });
 </script>
 </body>
 </html>
