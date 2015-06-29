@@ -1,9 +1,9 @@
 .box {
-    height: 45vh;
-    width: 25vh;
+    height: 22vh;
+    width: 28%;
     border-radius: 10px;
-    margin: 2vh;
-    padding: 2vh;
+    margin: 1vh;
+    padding: 1.5vh;
     display: inline-block;
     font-family: 'Yellowtail', 'Damion', cursive;
     text-align: center;
@@ -18,10 +18,10 @@
 .box>.name {
     clear: both;
     text-align: center;
-    font-size: 5vh;
-    bottom: 12vh;
+    font-size: 4vh;
+    top: 10vh;
     left: 0;
-    width: 100%;
+    width: 40%;
     position: absolute;
     -webkit-transform: translateZ(1px);
     -moz-transform: translateZ(1px);
@@ -49,6 +49,10 @@
 
 .delay {
     border: 2px solid hsl(28, 64%, 37%);
+}
+
+.master {
+    border: 2px solid #ffffff;
 }
 
 

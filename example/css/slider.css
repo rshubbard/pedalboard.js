@@ -83,6 +83,7 @@
         border: none;
         border-top: 4px solid #000;
         border-bottom: 4px solid #000;
+        height: 12vh;
     }
 
     .ui-slider-range { 
@@ -107,7 +108,7 @@
         height: 1px;
         position: absolute;
         top: 50%;
-        left: -1.7vh;
+        left: -1.8vh;
         border-left: 1.5vh solid white;
         border-right: 1.5vh solid white;
     }

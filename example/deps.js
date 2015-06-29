@@ -974,6 +974,8 @@ goog.addDependency('../../../../../src/stomp/conv/Conv.js', ['pb.stomp.Conv'], [
 goog.addDependency('../../../../../src/stomp/conv/ConvModel.js', ['pb.stomp.ConvModel'], ['pb.stomp.BoxModel']);
 goog.addDependency('../../../../../src/stomp/delay/Delay.js', ['pb.stomp.Delay'], ['pb.pot.Linear', 'pb.stomp.Box', 'pb.stomp.DelayModel']);
 goog.addDependency('../../../../../src/stomp/delay/DelayModel.js', ['pb.stomp.DelayModel'], ['pb.stomp.BoxModel']);
+goog.addDependency('../../../../../src/stomp/master/Master.js', ['pb.stomp.Master'], ['pb.stomp.Box', 'pb.stomp.MasterModel']);
+goog.addDependency('../../../../../src/stomp/master/MasterModel.js', ['pb.stomp.MasterModel'], ['pb.stomp.BoxModel']);
 goog.addDependency('../../../../../src/stomp/overdrive/Overdrive.js', ['pb.stomp.Overdrive'], ['pb.pot.Log', 'pb.stomp.Box', 'pb.stomp.OverdriveModel']);
 goog.addDependency('../../../../../src/stomp/overdrive/OverdriveModel.js', ['pb.stomp.OverdriveModel'], ['pb.stomp.BoxModel']);
 goog.addDependency('../../../../../src/stomp/reverb/Reverb.js', ['pb.stomp.Reverb'], ['pb.stomp.Conv', 'pb.stomp.ReverbModel']);

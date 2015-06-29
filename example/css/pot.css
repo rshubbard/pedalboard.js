@@ -1,21 +1,22 @@
 .pots {
     position: absolute;
-    width: 100%;
-    left: 0;
-    -webkit-transform: translateZ(1px);
-    -moz-transform: translateZ(1px)
+    width: 65%;
+    right: 0;
+    top: 2vh;
+    -webkit-transform: translateZ(10px);
+    -moz-transform: translateZ(10px)
 }
 
 .pot {
     display: inline-block;
     font-size: 2vh;
     text-align: center;
-    margin: 3vh;
+    margin: 0 3.7vh;
     width: 0.8vh;
 }
 
 .nameHolder {
-    transform: translateX(-50%);
+    transform: translateX(-50%) translateY(40%);
     bottom: -4vh;
     position: absolute;
 }

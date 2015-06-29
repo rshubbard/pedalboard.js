@@ -16,17 +16,17 @@
 .switches {
     position: absolute;
     bottom: 2vh;
-    right: 0;
-    width: 50%;
+    left: 0;
+    width: 40%;
     -webkit-transform: translateZ(1px);
     -moz-transform: translateZ(1px);
 }
 
 .leds {
     position: absolute;
-    bottom: 4.7vh;
+    top: 3.7vh;
     left: 0;
-    width: 50%;
+    width: 40%;
 }
 
 .led {

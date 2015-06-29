@@ -84,8 +84,9 @@
     var volume = new pb.stomp.Volume(ctx);
     var cabinet = new pb.stomp.Cabinet(ctx);
     var delay = new pb.stomp.Delay(ctx);
+    var master = new pb.stomp.Master(ctx);
 
-    board.addPedals([overdrive, delay, reverb, volume, cabinet]);
+    board.addPedals([overdrive, delay, reverb, volume, cabinet, master]);
 
     overdrive.setDrive(.1);
     overdrive.setTone(.4);

@@ -28,6 +28,7 @@ goog.require('pb.stomp.Overdrive');
 goog.require('pb.stomp.Reverb');
 goog.require('pb.stomp.Volume');
 goog.require('pb.stomp.Delay');
+goog.require('pb.stomp.Master');
 goog.require('tart.ui.DlgComponent');
 
 
