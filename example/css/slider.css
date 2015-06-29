@@ -34,8 +34,8 @@
         overflow: visible;
         text-align: center;
         top: 20px;
-        left: 20px;
-        margin-left: -1em;
+        left: 0;
+        margin-left: 0;
         cursor: pointer;
 
         -webkit-touch-callout: none;
@@ -51,10 +51,10 @@
 
     /* little pip/line position & size */
     .ui-slider-pips .ui-slider-line {
-        width: 1px;
+/*        width: 1px;
         height: 3px;
         position: absolute;
-        left: 50%;
+        left: 50%;*/
     }
 
     /* the text label postion & size */
@@ -98,7 +98,6 @@
     .ui-slider-vertical.ui-slider-pips .ui-slider-pip {
         text-align: left;
         top: auto;
-        left: 4.6vh;
         margin-bottom: -0.5em;
     }
 
@@ -108,9 +107,9 @@
         height: 1px;
         position: absolute;
         top: 50%;
-        left: -4.8vh;
-        border-left: 10px solid white;
-        border-right: 10px solid white;
+        left: -1.7vh;
+        border-left: 1.5vh solid white;
+        border-right: 1.5vh solid white;
     }
 
     .ui-slider-vertical.ui-slider-pips .ui-slider-label {
