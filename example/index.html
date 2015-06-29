@@ -54,8 +54,8 @@
             <div id="controlPanel">
                 <div id="billboard">
                     <div id="photo"></div>
-                    <div id="artist">Artist</div>
-                    <div id="title">Title</div>
+                    <div id="artist"></div>
+                    <div id="title"></div>
                 </div>
                 <div id="controlButton">&#9654;</div>
                 <audio id="player" crossOrigin="anonymous" style="display:none;" controls="true"></audio>
@@ -111,8 +111,8 @@
         $(audio).toggle();
     };
 
-    stage.get_song_data(params.get('song'));
-
+    /* use song 19823205 if song id not set */
+    stage.get_song_data(params.get('song') || 19823205);
 
     var play = function () {
         stage.play(stage.current_song.url);
